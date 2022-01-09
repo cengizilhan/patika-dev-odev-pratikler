@@ -1,1 +1,1 @@
-ES6 Modules & Axios Get Example
+ES6 Modules & Axios Example
