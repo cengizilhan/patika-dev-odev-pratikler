@@ -10,7 +10,7 @@ export async function getData(number) {
     const endPointPost = 'https://jsonplaceholder.typicode.com/posts?userId=' + userId.toString();
 
 
-    let { data: user } = await axios.get(endPointUser);
+    let { data: user } = await axios.get(endPointUser); //wait response end send to variable
     let { data: post } = await axios.get(endPointPost)
 
     user.posts = [{ ...post }];
