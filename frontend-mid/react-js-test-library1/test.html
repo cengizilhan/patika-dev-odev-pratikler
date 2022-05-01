@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+function SearchingChallenge(str) { 
+var orjStr=str;
+wordArr=str.split(' ');
+console.log(wordArr);
+
+var repeats=[]
+for (const element of wordArr)
+{
+str=element;
+
+var obj={}
+for (x=0, length=str.length; x<length; x++)
+{
+
+var l=str.charAt(x)
+obj[l]= (isNaN(obj[l])? 1: obj[l]+1);
+
+}
+repeats.push(obj);
+//repeats= counter obj and word.)
+
+console.log(repeats);
+}
+var MaxChars=[];
+for (const x of repeats) //get repeats obj
+{
+    var wordvar=x;
+        var result = Object.keys(wordvar).map((key) => [key, wordvar[key]]);
+        var res=Math.max.apply(Math, result.map(function(o) { return o[1]; }))
+        console.log(res);
+        MaxChars.push(res);
+
+
+    }
+    console.log("max chars", MaxChars)
+
+const max = Math.max(...MaxChars);
+const min= Math.min(...MaxChars);
+const index = MaxChars.indexOf(max);
+console.log("max",max);
+console.log("min",min);
+console.log("max char index in array", index);
+console.log(wordArr[index]);
+if(max==min)
+{
+    str=parseInt(-1);
+}else
+{
+    str=wordArr[index];
+}
+
+
+
+
+  // code goes here  
+  return str; 
+
+}
+   
+
+
+// keep this function call here 
+
+
+
+
+        </script>
+
+</body>
+</html>

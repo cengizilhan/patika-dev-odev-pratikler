@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function evaluateMath(str) {
+  for (var i = 0; i < str.length; i++) {
+    if (isNaN(str[i]) && !['+', '-', '/', '*', '%', '**'].includes(str[i])) {
+      return NaN;
+    }
+  }
+  
+  
+  try {
+    return eval(str)
+  } catch (e) {
+    if (e.name !== 'SyntaxError') throw e
+    return NaN;
+  }
+}
+
+console.log(evaluateMath("6*(4/2)+3*1"))
+    </script>
+    
+</body>
+</html>

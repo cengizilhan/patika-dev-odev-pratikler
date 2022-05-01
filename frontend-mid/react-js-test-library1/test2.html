@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var wordvar={h: 1, e: 1, l: 2, o: 1};
+        var result = Object.keys(wordvar).map((key) => [key, wordvar[key]]);
+        console.log(result);
+        
+        var re=Math.max.apply(Math, result.map(function(o) { return o[1]; }))
+        console.log(re);
+        
+    </script>
+</body>
+</html>
