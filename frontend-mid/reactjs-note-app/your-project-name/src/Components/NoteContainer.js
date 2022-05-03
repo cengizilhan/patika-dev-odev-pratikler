@@ -21,9 +21,9 @@ export default function NoteContainer() {
       <NoteAddContainer></NoteAddContainer>
       
       
-      {list.map((e)=>{
+      {list.map((e, index)=>{
        return (
-       <NoteButton props={e} />
+       <NoteButton key={index} props={e} />
      );})}
 
     </section>
