@@ -1,0 +1,41 @@
+.carder button{
+border-radius: 5px;
+border:none;
+padding: 0.4rem 0px;
+font-weight: bolder;
+}
+.card__button-greenbg {
+    background: linear-gradient(180deg,#2ecc71,#1abc9c);
+}
+
+.text-green {
+    color: #24c486;
+}
+.carder .card-textinput {
+    border: 1px solid #b2bec3;
+}
+.carder  img {
+    aspect-ratio: 2/2;
+    object-fit: contain;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+
+input{
+   text-align:center;
+}
