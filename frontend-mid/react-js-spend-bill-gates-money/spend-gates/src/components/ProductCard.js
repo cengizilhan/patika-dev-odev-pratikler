@@ -1,8 +1,28 @@
 import React from "react";
 import "./ProductCard.css";
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, countIncrement , countDecrement} from '../services/redux/menuSlicer'
+
+
 
 
 export default function ProductCard(props) {
+  const dispatch = useDispatch();
+
+  function increment(){
+    var productId=props.props.id;
+    //dispatch payload increment action
+    productId=parseInt(productId);
+    dispatch(countIncrement({payload:productId}));
+  }
+
+  function decrement(){
+    var productId=props.props.id;
+    //dispatch payload increment action
+    productId=parseInt(productId);
+    dispatch(countDecrement({payload:productId}));
+  }
+  
   return (
     <div key={props.props.id} className="col-6 col-sm-6 col-md-6 col-lg-4">
       <div className="carder p-4   pb-3 bg-white">
@@ -13,14 +33,16 @@ export default function ProductCard(props) {
       </div>
       <div className="card-bottom row">
         <div className="col-4 p-1">
-          <button className="w-100">Sell</button>
+          <button className="w-100"   onClick={decrement}>Sell</button>
         </div>
         <div className="col-4 p-1">
           <input type="text" className="w-100 h-100 card-textinput"
            placeholder={props.props.count}></input>
         </div>
         <div className="col-4 p-1">
-          <button className="w-100 card__button-greenbg text-white">Buy </button>
+          <button className="w-100 card__button-greenbg text-white"
+          onClick={increment}>Buy</button> 
+          
         </div>
       </div>
       </div>
