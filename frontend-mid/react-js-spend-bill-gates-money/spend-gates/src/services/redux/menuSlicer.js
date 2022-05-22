@@ -349,7 +349,10 @@ state.products.map((x)=>{
         state.products.map((x)=>{
             if(parseInt(x.id) === paramId){
                 x.count = parseInt(x.count);
-                x.count = x.count - 1;
+                if(x.count > 0){
+                    x.count = x.count - 1;
+                }
+                
             }
         })
         
