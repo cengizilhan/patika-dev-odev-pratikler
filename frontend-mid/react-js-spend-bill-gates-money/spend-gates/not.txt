@@ -1,0 +1,5 @@
+sayılar güncelleniyor.
+
+sayılar güncellendikçe üstteki ile ilgili işlem yapılacak.
+
+tüm ürünler dolaşılıp : count x price olacak ve total rakam ana paradan çıkarılacak

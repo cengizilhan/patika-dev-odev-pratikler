@@ -4,6 +4,7 @@ export const menuSlicer = createSlice({
   name: 'menu',
   initialState: {
     value: 50, // temp
+    defaultBalance:100000000000,
     balance: 100000000000,
     products:
     [
@@ -336,10 +337,10 @@ state.products.map((x)=>{
     if(parseInt(x.id) === paramId){
         x.count = parseInt(x.count);
         x.count = x.count + 1;
-    }
+    }  
 })
 
-
+menuSlicer.caseReducers.balanceCalculator(state, action);
 
     },
     
@@ -355,6 +356,20 @@ state.products.map((x)=>{
                 
             }
         })
+        
+
+    },
+    balanceCalculator: (state, action) => {
+        //loop products and calculate total price
+        let totalPrice = 0;
+        console.log(state.products);
+        state.products.map((x)=>{
+            totalPrice = totalPrice + (x.productPrice * x.count);
+        }
+        )
+        state.balance = state.defaultBalance- totalPrice;
+       
+        
         
 
     },
